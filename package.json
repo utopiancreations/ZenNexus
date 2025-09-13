@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "db:setup": "node db/setup.js"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.5",
@@ -15,7 +16,13 @@
     "@astrojs/vercel": "^8.2.7",
     "@types/jsonwebtoken": "^9.0.10",
     "astro": "^5.13.7",
+    "dotenv": "^17.2.2",
     "jsonwebtoken": "^9.0.2",
+    "postgres": "^3.4.7",
     "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "ts-node": "^10.9.2"
   }
 }

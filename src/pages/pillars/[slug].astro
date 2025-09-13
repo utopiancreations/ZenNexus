@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllPillars } from '../../db/lib';
+
+export async function getStaticPaths() {
+  const pillars = await getAllPillars();
+  return pillars.map(pillar => ({
+    params: { slug: pillar.slug },
+    props: { pillar },
+  }));
+}
+
+const { pillar } = Astro.props;
+---
+<Layout title={pillar.title}>
+    <article>
+        <h1 class="text-4xl font-bold mb-4">{pillar.title}</h1>
+        <div set:html={pillar.content} class="prose lg:prose-xl" />
+    </article>
+</Layout>
